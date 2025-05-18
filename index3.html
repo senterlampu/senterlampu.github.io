@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCA Treatment Information</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f5ff;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .nav-item.active {
+            border-left: 4px solid #8b5cf6;
+            background-color: rgba(139, 92, 246, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-purple-800 text-center">TCA Treatment Center</h1>
+            <p class="text-center text-gray-600">Solusi Perawatan Kulit dengan TCA</p>
+        </header>
+        
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Main Content Area -->
+            <div class="w-full md:w-3/4 bg-white rounded-lg shadow-md p-6">
+                <!-- Page 1: TCA untuk Kutil -->
+                <div id="page1" class="page active">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">TCA untuk Kutil</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f3f4f6'/%3E%3Ccircle cx='200' cy='100' r='50' fill='%23c4b5fd'/%3E%3Cpath d='M180,100 Q200,70 220,100 T260,100' stroke='%238b5cf6' stroke-width='4' fill='none'/%3E%3Cpath d='M170,120 Q185,100 200,120 T230,120' stroke='%238b5cf6' stroke-width='4' fill='none'/%3E%3Cpath d='M160,140 Q185,110 210,140 T260,140' stroke='%238b5cf6' stroke-width='4' fill='none'/%3E%3C/svg%3E" alt="Ilustrasi TCA untuk Kutil" class="rounded-lg mb-4 w-full">
+                    
+                    <p class="mb-4">TCA (Trichloroacetic Acid) adalah perawatan kimia yang efektif untuk menghilangkan kutil. Asam ini bekerja dengan menghancurkan protein dalam jaringan kutil, menyebabkan kutil mengering dan akhirnya terkelupas.</p>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Manfaat TCA untuk Kutil:</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Efektif untuk berbagai jenis kutil</li>
+                        <li>Prosedur cepat dengan waktu pemulihan minimal</li>
+                        <li>Dapat digunakan untuk area yang sulit dijangkau</li>
+                        <li>Tingkat keberhasilan tinggi dengan perawatan yang tepat</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Cara Penggunaan:</h3>
+                    <ol class="list-decimal pl-6 mb-4">
+                        <li>Bersihkan area yang akan dirawat</li>
+                        <li>Aplikasikan TCA dengan hati-hati hanya pada area kutil</li>
+                        <li>Biarkan mengering selama beberapa menit</li>
+                        <li>Bilas dengan air bersih</li>
+                        <li>Ulangi perawatan sesuai anjuran (biasanya 1-2 minggu sekali)</li>
+                    </ol>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <p class="text-purple-800 font-medium">Catatan Penting:</p>
+                        <p class="text-sm text-gray-700">Konsultasikan dengan dokter kulit sebelum menggunakan TCA, terutama untuk konsentrasi tinggi. Penggunaan yang tidak tepat dapat menyebabkan iritasi atau bekas luka.</p>
+                    </div>
+                </div>
+                
+                <!-- Page 2: TCA untuk Bopeng -->
+                <div id="page2" class="page">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">TCA untuk Bopeng</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f3f4f6'/%3E%3Ccircle cx='150' cy='100' r='70' fill='%23e9d5ff'/%3E%3Ccircle cx='250' cy='100' r='70' fill='%23ddd6fe'/%3E%3Ccircle cx='200' cy='100' r='30' fill='%23c4b5fd'/%3E%3Ccircle cx='170' cy='80' r='5' fill='%238b5cf6'/%3E%3Ccircle cx='190' cy='120' r='8' fill='%238b5cf6'/%3E%3Ccircle cx='220' cy='90' r='6' fill='%238b5cf6'/%3E%3Ccircle cx='240' cy='110' r='7' fill='%238b5cf6'/%3E%3Ccircle cx='160' cy='110' r='4' fill='%238b5cf6'/%3E%3C/svg%3E" alt="Ilustrasi TCA untuk Bopeng" class="rounded-lg mb-4 w-full">
+                    
+                    <p class="mb-4">TCA Cross (Chemical Reconstruction of Skin Scars) adalah metode perawatan yang efektif untuk mengurangi tampilan bopeng akibat jerawat. Metode ini menggunakan TCA konsentrasi tinggi yang diaplikasikan langsung ke dalam bopeng.</p>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Bagaimana TCA Bekerja untuk Bopeng:</h3>
+                    <p class="mb-4">TCA menyebabkan kerusakan terkontrol pada jaringan parut, memicu proses penyembuhan alami tubuh. Saat kulit sembuh, kolagen baru terbentuk, mengangkat dasar bopeng dan mengurangi kedalamannya.</p>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Jenis Bopeng yang Dapat Dirawat:</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Bopeng ice pick (lubang kecil dan dalam)</li>
+                        <li>Bopeng boxcar (lubang berbentuk kotak dengan tepi tajam)</li>
+                        <li>Bopeng rolling (lubang bergelombang dengan tepi halus)</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Proses Perawatan:</h3>
+                    <ol class="list-decimal pl-6 mb-4">
+                        <li>Konsultasi dan evaluasi kondisi kulit</li>
+                        <li>Pembersihan wajah</li>
+                        <li>Aplikasi TCA dengan konsentrasi yang sesuai</li>
+                        <li>Periode pemulihan (biasanya 5-7 hari)</li>
+                        <li>Perawatan lanjutan setelah 4-6 minggu</li>
+                    </ol>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <p class="text-purple-800 font-medium">Hasil yang Diharapkan:</p>
+                        <p class="text-sm text-gray-700">Perbaikan terlihat setelah 1-3 sesi perawatan, dengan pengurangan kedalaman bopeng hingga 70% pada kasus yang ideal. Hasil bervariasi tergantung jenis dan kedalaman bopeng.</p>
+                    </div>
+                </div>
+                
+                <!-- Page 3: TCA untuk Peeling -->
+                <div id="page3" class="page">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">TCA untuk Peeling</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f3f4f6'/%3E%3Cpath d='M50,150 C100,50 300,50 350,150' fill='%23ddd6fe' stroke='%23a78bfa' stroke-width='2'/%3E%3Cpath d='M75,140 C125,60 275,60 325,140' fill='%23c4b5fd' stroke='%238b5cf6' stroke-width='2'/%3E%3Cpath d='M100,130 C150,70 250,70 300,130' fill='%23a78bfa' stroke='%237c3aed' stroke-width='2'/%3E%3Cpath d='M125,120 C175,80 225,80 275,120' fill='%238b5cf6' stroke='%236d28d9' stroke-width='2'/%3E%3C/svg%3E" alt="Ilustrasi TCA Peeling" class="rounded-lg mb-4 w-full">
+                    
+                    <p class="mb-4">TCA Peeling adalah prosedur peremajaan kulit yang menggunakan asam trikloroasetat untuk mengelupas lapisan kulit mati dan merangsang pertumbuhan kulit baru. Peeling ini tersedia dalam berbagai konsentrasi untuk mengatasi berbagai masalah kulit.</p>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Manfaat TCA Peeling:</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Mengurangi hiperpigmentasi dan bintik hitam</li>
+                        <li>Memperbaiki tekstur kulit yang kasar</li>
+                        <li>Mengurangi garis halus dan kerutan</li>
+                        <li>Mencerahkan kulit kusam</li>
+                        <li>Membantu mengatasi jerawat dan bekas jerawat</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Tingkatan TCA Peeling:</h3>
+                    <ul class="mb-4">
+                        <li class="mb-2"><span class="font-medium">Ringan (10-15%):</span> Untuk masalah kulit ringan, tanpa waktu pemulihan</li>
+                        <li class="mb-2"><span class="font-medium">Sedang (15-25%):</span> Untuk hiperpigmentasi dan garis halus, waktu pemulihan 5-7 hari</li>
+                        <li class="mb-2"><span class="font-medium">Dalam (25-35%):</span> Untuk masalah kulit yang lebih serius, waktu pemulihan 7-14 hari</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Proses Perawatan:</h3>
+                    <ol class="list-decimal pl-6 mb-4">
+                        <li>Pembersihan kulit menyeluruh</li>
+                        <li>Aplikasi larutan TCA</li>
+                        <li>Penetralan (jika diperlukan)</li>
+                        <li>Aplikasi produk penenang dan pelembab</li>
+                        <li>Perawatan pasca-peeling selama beberapa hari</li>
+                    </ol>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <p class="text-purple-800 font-medium">Perawatan Pasca-Peeling:</p>
+                        <p class="text-sm text-gray-700">Hindari paparan sinar matahari langsung, gunakan tabir surya SPF 30+ setiap hari, hindari produk eksfoliasi selama 2 minggu, dan jaga kelembaban kulit dengan pelembab yang direkomendasikan.</p>
+                    </div>
+                </div>
+                
+                <!-- Page 4: TCA untuk Syringoma/Milia -->
+                <div id="page4" class="page">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">TCA untuk Syringoma/Milia</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f3f4f6'/%3E%3Cellipse cx='200' cy='100' rx='150' ry='70' fill='%23e9d5ff'/%3E%3Ccircle cx='150' cy='80' r='8' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='180' cy='110' r='6' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='210' cy='70' r='7' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='240' cy='100' r='5' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='170' cy='130' r='4' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3Ccircle cx='220' cy='120' r='6' fill='white' stroke='%238b5cf6' stroke-width='2'/%3E%3C/svg%3E" alt="Ilustrasi TCA untuk Syringoma/Milia" class="rounded-lg mb-4 w-full">
+                    
+                    <p class="mb-4">TCA adalah salah satu metode efektif untuk mengatasi syringoma (tumor jinak kelenjar keringat) dan milia (kista kecil berisi keratin). Perawatan ini bekerja dengan menghancurkan jaringan abnormal secara terkontrol.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Syringoma</h3>
+                            <p>Benjolan kecil berwarna kuning atau kulit yang biasanya muncul di sekitar mata. Merupakan tumor jinak dari kelenjar keringat ekrin.</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Milia</h3>
+                            <p>Kista kecil berwarna putih yang terbentuk ketika keratin terperangkap di bawah permukaan kulit. Sering muncul di wajah, terutama di sekitar mata dan pipi.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Cara Kerja TCA untuk Syringoma/Milia:</h3>
+                    <p class="mb-4">TCA dengan konsentrasi yang tepat diaplikasikan langsung ke syringoma atau milia. Asam ini menyebabkan pengelupasan terkontrol yang menghancurkan jaringan abnormal dan memungkinkan kulit baru yang sehat untuk tumbuh.</p>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Proses Perawatan:</h3>
+                    <ol class="list-decimal pl-6 mb-4">
+                        <li>Pembersihan area yang akan dirawat</li>
+                        <li>Aplikasi TCA dengan konsentrasi yang sesuai menggunakan aplikator khusus</li>
+                        <li>Pembentukan "frost" (lapisan putih) menandakan reaksi yang diinginkan</li>
+                        <li>Penetralan (jika diperlukan)</li>
+                        <li>Perawatan pasca-prosedur</li>
+                    </ol>
+                    
+                    <h3 class="text-xl font-medium text-purple-600 mb-2">Hasil yang Diharapkan:</h3>
+                    <ul class="list-disc pl-6 mb-4">
+                        <li>Pengurangan ukuran dan visibilitas syringoma/milia</li>
+                        <li>Perbaikan tekstur kulit secara keseluruhan</li>
+                        <li>Beberapa lesi mungkin memerlukan beberapa sesi perawatan</li>
+                    </ul>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <p class="text-purple-800 font-medium">Catatan Penting:</p>
+                        <p class="text-sm text-gray-700">Perawatan TCA untuk syringoma dan milia sebaiknya dilakukan oleh profesional terlatih untuk menghindari kerusakan pada kulit sekitarnya. Konsultasikan dengan dokter kulit untuk menentukan apakah TCA adalah pilihan terbaik untuk kondisi Anda.</p>
+                    </div>
+                </div>
+                
+                <!-- Page 5: FAQ -->
+                <div id="page5" class="page">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">Pertanyaan Umum (FAQ)</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='150' viewBox='0 0 400 150'%3E%3Crect width='400' height='150' fill='%23f3f4f6'/%3E%3Ccircle cx='100' cy='75' r='50' fill='%23ddd6fe'/%3E%3Ctext x='100' y='85' font-family='Arial' font-size='40' text-anchor='middle' fill='%238b5cf6'%3E%3F%3C/text%3E%3Ccircle cx='200' cy='75' r='50' fill='%23c4b5fd'/%3E%3Ctext x='200' y='85' font-family='Arial' font-size='40' text-anchor='middle' fill='%237c3aed'%3E%3F%3C/text%3E%3Ccircle cx='300' cy='75' r='50' fill='%23a78bfa'/%3E%3Ctext x='300' y='85' font-family='Arial' font-size='40' text-anchor='middle' fill='%236d28d9'%3E%3F%3C/text%3E%3C/svg%3E" alt="FAQ Illustration" class="rounded-lg mb-6 w-full">
+                    
+                    <div class="space-y-6">
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Apakah perawatan TCA aman?</h3>
+                            <p>Ya, perawatan TCA umumnya aman bila dilakukan dengan benar oleh profesional terlatih. Namun, seperti semua prosedur medis, ada risiko tertentu seperti hiperpigmentasi sementara, kemerahan, atau pengelupasan. Konsultasi awal sangat penting untuk menentukan apakah Anda adalah kandidat yang tepat.</p>
+                        </div>
+                        
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Berapa lama waktu pemulihan setelah perawatan TCA?</h3>
+                            <p>Waktu pemulihan bervariasi tergantung pada konsentrasi TCA yang digunakan dan area yang dirawat. Untuk peeling ringan, pemulihan bisa 2-3 hari. Untuk perawatan sedang, 5-7 hari. Untuk perawatan dalam, bisa membutuhkan waktu 7-14 hari. Selama masa pemulihan, kulit mungkin mengalami kemerahan, pengelupasan, dan sedikit bengkak.</p>
+                        </div>
+                        
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Berapa kali perawatan TCA yang dibutuhkan?</h3>
+                            <p>Jumlah perawatan yang dibutuhkan tergantung pada kondisi kulit dan masalah yang ditangani. Untuk masalah ringan, 1-2 sesi mungkin cukup. Untuk masalah yang lebih kompleks seperti bopeng dalam atau syringoma yang banyak, mungkin diperlukan 3-6 sesi dengan interval 4-6 minggu.</p>
+                        </div>
+                        
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Apakah perawatan TCA terasa sakit?</h3>
+                            <p>Kebanyakan pasien melaporkan sensasi terbakar ringan hingga sedang selama aplikasi TCA. Intensitas sensasi ini tergantung pada konsentrasi TCA yang digunakan. Untuk kenyamanan, krim anestesi topikal dapat diaplikasikan sebelum prosedur. Sensasi terbakar biasanya mereda dalam beberapa menit.</p>
+                        </div>
+                        
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Bisakah saya menggunakan TCA di rumah?</h3>
+                            <p>Meskipun tersedia produk TCA untuk penggunaan di rumah, sangat disarankan untuk mendapatkan perawatan dari profesional terlatih, terutama untuk konsentrasi yang lebih tinggi. Penggunaan yang tidak tepat dapat menyebabkan luka bakar kimia, bekas luka, atau hiperpigmentasi. Jika Anda memilih untuk menggunakan produk di rumah, gunakan hanya produk dengan konsentrasi rendah dan ikuti petunjuk dengan hati-hati.</p>
+                        </div>
+                        
+                        <div class="border-b border-purple-100 pb-4">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Apakah ada efek samping dari perawatan TCA?</h3>
+                            <p>Efek samping potensial termasuk kemerahan, pengelupasan, kekeringan, dan sensitivitas terhadap sinar matahari. Efek samping yang lebih jarang termasuk hiperpigmentasi sementara, hipopigmentasi, atau dalam kasus yang sangat jarang, bekas luka. Mengikuti instruksi perawatan pasca-prosedur dengan cermat dapat membantu meminimalkan risiko efek samping.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Page 6: Cara Belanja -->
+                <div id="page6" class="page">
+                    <h2 class="text-2xl font-semibold text-purple-700 mb-4">Cara Belanja</h2>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='150' viewBox='0 0 400 150'%3E%3Crect width='400' height='150' fill='%23f3f4f6'/%3E%3Crect x='50' y='30' width='300' height='90' rx='10' fill='%23ddd6fe'/%3E%3Crect x='70' y='50' width='260' height='50' rx='5' fill='white'/%3E%3Ccircle cx='100' cy='75' r='15' fill='%238b5cf6'/%3E%3Cpath d='M95,75 L100,80 L105,70' stroke='white' stroke-width='2' fill='none'/%3E%3Ccircle cx='150' cy='75' r='15' fill='%23a78bfa'/%3E%3Cpath d='M145,75 L150,80 L155,70' stroke='white' stroke-width='2' fill='none'/%3E%3Ccircle cx='200' cy='75' r='15' fill='%23c4b5fd'/%3E%3Cpath d='M195,75 L200,80 L205,70' stroke='white' stroke-width='2' fill='none'/%3E%3Crect x='240' y='65' width='70' height='20' rx='5' fill='%237c3aed'/%3E%3Ctext x='275' y='80' font-family='Arial' font-size='12' text-anchor='middle' fill='white'%3EBeli%3C/text%3E%3C/svg%3E" alt="Shopping Guide Illustration" class="rounded-lg mb-6 w-full">
+                    
+                    <p class="mb-6">Kami menyediakan berbagai produk TCA untuk kebutuhan perawatan kulit Anda. Berikut adalah panduan langkah demi langkah untuk berbelanja di toko kami:</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-medium text-purple-600 mb-4">Langkah-langkah Pembelian</h3>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">1</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Pilih Produk</h4>
+                                <p class="text-gray-600">Jelajahi katalog kami dan pilih produk TCA yang sesuai dengan kebutuhan perawatan kulit Anda. Setiap produk memiliki deskripsi detail dan rekomendasi penggunaan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">2</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Tambahkan ke Keranjang</h4>
+                                <p class="text-gray-600">Klik tombol "Tambah ke Keranjang" pada produk yang ingin Anda beli. Anda dapat menambahkan beberapa produk ke keranjang Anda.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">3</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Checkout</h4>
+                                <p class="text-gray-600">Setelah selesai memilih produk, klik ikon keranjang di pojok kanan atas dan pilih "Checkout" untuk melanjutkan ke proses pembayaran.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">4</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Isi Data Pengiriman</h4>
+                                <p class="text-gray-600">Masukkan alamat pengiriman dan informasi kontak Anda. Pastikan semua data terisi dengan benar untuk menghindari masalah pengiriman.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">5</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Pilih Metode Pembayaran</h4>
+                                <p class="text-gray-600">Kami menerima berbagai metode pembayaran termasuk transfer bank, kartu kredit, e-wallet, dan pembayaran melalui minimarket.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mt-1">6</div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-purple-700">Konfirmasi dan Selesai</h4>
+                                <p class="text-gray-600">Tinjau pesanan Anda, lakukan pembayaran, dan tunggu konfirmasi. Anda akan menerima email dengan detail pesanan dan informasi pengiriman.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Pengiriman</h3>
+                            <p class="mb-2">Kami mengirimkan produk ke seluruh Indonesia menggunakan jasa ekspedisi terpercaya.</p>
+                            <ul class="list-disc pl-5 text-sm">
+                                <li>JNE (1-3 hari kerja)</li>
+                                <li>J&T Express (1-3 hari kerja)</li>
+                                <li>SiCepat (1-2 hari kerja)</li>
+                                <li>Pos Indonesia (2-5 hari kerja)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-medium text-purple-700 mb-2">Kebijakan Pengembalian</h3>
+                            <p class="mb-2">Kepuasan Anda adalah prioritas kami. Kebijakan pengembalian kami:</p>
+                            <ul class="list-disc pl-5 text-sm">
+                                <li>7 hari pengembalian untuk produk cacat</li>
+                                <li>Produk harus dalam kondisi asli</li>
+                                <li>Sertakan bukti pembelian</li>
+                                <li>Biaya pengiriman pengembalian ditanggung pembeli</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-100 p-5 rounded-lg">
+                        <h3 class="text-lg font-medium text-purple-700 mb-2">Butuh Bantuan?</h3>
+                        <p class="mb-3">Tim layanan pelanggan kami siap membantu Anda dengan pertanyaan atau masalah apa pun.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span class="ml-2">0812-3456-7890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span class="ml-2">info@tcatreatment.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                                <span class="ml-2">Live Chat (09.00 - 17.00 WIB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Navigation Column -->
+            <div class="w-full md:w-1/4">
+                <div class="bg-white rounded-lg shadow-md p-4 sticky top-4">
+                    <h3 class="text-xl font-semibold text-purple-700 mb-4">Menu</h3>
+                    <nav>
+                        <ul class="space-y-2">
+                            <li>
+                                <button id="nav1" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 active flex items-center transition-all" onclick="changePage(1)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                    TCA untuk Kutil
+                                </button>
+                            </li>
+                            <li>
+                                <button id="nav2" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 flex items-center transition-all" onclick="changePage(2)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                    TCA untuk Bopeng
+                                </button>
+                            </li>
+                            <li>
+                                <button id="nav3" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 flex items-center transition-all" onclick="changePage(3)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                    TCA untuk Peeling
+                                </button>
+                            </li>
+                            <li>
+                                <button id="nav4" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 flex items-center transition-all" onclick="changePage(4)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                    </svg>
+                                    TCA untuk Syringoma/Milia
+                                </button>
+                            </li>
+                            <li>
+                                <button id="nav5" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 flex items-center transition-all" onclick="changePage(5)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    FAQ
+                                </button>
+                            </li>
+                            <li>
+                                <button id="nav6" class="nav-item w-full text-left px-4 py-2 rounded-md hover:bg-purple-50 flex items-center transition-all" onclick="changePage(6)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    Cara Belanja
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="mt-8 bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-medium text-purple-700 mb-2">Butuh Konsultasi?</h4>
+                        <p class="text-sm text-gray-600 mb-3">Hubungi ahli kami untuk mendapatkan saran perawatan yang tepat untuk kondisi kulit Anda.</p>
+                        <button class="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            Chat Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function changePage(pageNumber) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById('page' + pageNumber).classList.add('active');
+            
+            // Update navigation styling
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active', 'bg-purple-50', 'border-l-4', 'border-purple-600');
+            });
+            
+            document.getElementById('nav' + pageNumber).classList.add('active', 'bg-purple-50');
+            
+            // Scroll to top on mobile
+            if (window.innerWidth < 768) {
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        // Initialize the first page as active
+        document.addEventListener('DOMContentLoaded', function() {
+            changePage(1);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'941c940b53dfe141',t:'MTc0NzU4NDE0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

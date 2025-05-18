@@ -32,23 +32,78 @@
             box-shadow: 0 20px 40px rgba(50, 50, 93, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .elegant-bg {
+        .left-column-bg {
             background: linear-gradient(135deg, #2A2F4F 0%, #3A4F7A 100%);
             position: relative;
+            overflow: hidden;
         }
         
-        .elegant-bg::before {
-            content: '';
+        /* Decorative patterns for left column */
+        .pattern-top-right {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-            opacity: 0.6;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            opacity: 0.1;
+            border: 2px solid white;
+            border-radius: 8px;
+            transform: rotate(45deg);
+        }
+        
+        .pattern-top-left {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            opacity: 0.1;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        
+        .pattern-middle {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            opacity: 0.1;
+            border: 2px solid white;
+            transform: translateY(-50%) rotate(30deg);
+        }
+        
+        .pattern-dots {
+            position: absolute;
+            top: 35%;
+            right: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 60px;
+            opacity: 0.1;
+        }
+        
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 3px;
+        }
+        
+        .pattern-line {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            width: 80px;
+            height: 1px;
+            background-color: white;
+            opacity: 0.1;
+            transform: translateX(-50%);
+        }
+        
+        .right-column-bg {
+            background: linear-gradient(135deg, #F8F4EC 0%, #F5F5F5 100%);
         }
         
         .nav-link {
@@ -157,18 +212,126 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
+        /* Bottle logo styles */
+        .bottle-logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bottle {
+            position: relative;
+            width: 36px;
+            height: 60px;
+        }
+        
+        .bottle-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 45px;
+            background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            border-radius: 5px 5px 15px 15px;
+        }
+        
+        .bottle-neck {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 10px;
+            background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .bottle-cap {
+            position: absolute;
+            bottom: 55px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 6px;
+            background: #fff;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .bottle-shine {
+            position: absolute;
+            top: 10px;
+            left: 6px;
+            width: 8px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: rotate(30deg);
+        }
+        
+        .bottle-label {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bottle-text {
+            font-size: 10px;
+            font-weight: bold;
+            color: #6366F1;
+        }
     </style>
 </head>
 <body>
     <div class="card max-w-4xl w-full">
         <div class="flex flex-col md:flex-row">
             <!-- Left Column - Logo and Social Media Icons -->
-            <div class="elegant-bg p-8 flex flex-col items-center justify-between md:w-1/3 relative">
-                <!-- Logo -->
+            <div class="left-column-bg p-8 flex flex-col items-center justify-between md:w-1/3 relative">
+                <!-- Decorative patterns - positioned to not overlap with icons -->
+                <div class="pattern-top-right"></div>
+                <div class="pattern-top-left"></div>
+                <div class="pattern-middle"></div>
+                <div class="pattern-line"></div>
+                <div class="pattern-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                
+                <!-- Logo with Bottle Icon -->
                 <div class="flex flex-col items-center mb-8 mt-4 z-10">
                     <div class="logo-container mb-4">
                         <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
-                            <span class="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 text-transparent bg-clip-text">TCA</span>
+                            <div class="bottle-logo">
+                                <div class="bottle">
+                                    <div class="bottle-cap"></div>
+                                    <div class="bottle-neck"></div>
+                                    <div class="bottle-body">
+                                        <div class="bottle-shine"></div>
+                                        <div class="bottle-label">
+                                            <span class="bottle-text">TCA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <h1 class="text-3xl font-bold text-white tracking-tight text-center">
@@ -176,7 +339,7 @@
                     </h1>
                 </div>
                 
-                <!-- Social Media Icons -->
+                <!-- Social Media Icons - these will be above any patterns -->
                 <div class="flex flex-wrap justify-center gap-4 mb-4 z-10">
                     <!-- Shopee -->
                     <a href="https://shopee.co.id" target="_blank" class="social-icon shopee" title="Shopee">
@@ -220,18 +383,13 @@
                         </svg>
                     </a>
                 </div>
-                
-                <!-- Decorative elements -->
-                <div class="absolute bottom-4 left-4 w-16 h-16 rounded-full bg-white opacity-5"></div>
-                <div class="absolute top-12 right-4 w-8 h-8 rounded-full bg-white opacity-5"></div>
-                <div class="absolute bottom-24 right-12 w-12 h-12 rounded-full bg-white opacity-5"></div>
             </div>
             
-            <!-- Right Column - Navigation -->
-            <div class="p-8 md:w-2/3 bg-white">
+            <!-- Right Column - Navigation with elegant gradient background -->
+            <div class="right-column-bg p-8 md:w-2/3">
                 <div class="mb-6">
                     <h2 class="text-xl font-semibold mb-2 title-gradient">Social Media Pages</h2>
-                    <p class="text-gray-500 text-sm">Connect with us on our social platforms</p>
+                    <p class="text-gray-600 text-sm">Connect with us on our social platforms</p>
                 </div>
                 
                 <nav class="space-y-1">
@@ -277,8 +435,8 @@
                     </a>
                 </nav>
                 
-                <div class="mt-8 pt-6 border-t border-gray-100">
-                    <div id="page-content" class="text-gray-600">
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div id="page-content" class="text-gray-700">
                         <div id="page1" class="page-section">
                             <div class="flex items-center mb-3">
                                 <div class="w-2 h-8 bg-indigo-500 rounded-full mr-3"></div>
@@ -360,5 +518,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'941c2d6a511baa34',t:'MTc0NzU3OTkzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'941c71e2f4d94ac7',t:'MTc0NzU4Mjc0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

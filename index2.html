@@ -1,0 +1,1138 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCA80.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef1f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(50, 50, 93, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .left-column-bg {
+            background: linear-gradient(135deg, #2A2F4F 0%, #3A4F7A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative patterns for left column */
+        .pattern-top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            opacity: 0.1;
+            border: 2px solid white;
+            border-radius: 8px;
+            transform: rotate(45deg);
+        }
+        
+        .pattern-top-left {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            opacity: 0.1;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        
+        .pattern-middle {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            opacity: 0.1;
+            border: 2px solid white;
+            transform: translateY(-50%) rotate(30deg);
+        }
+        
+        .pattern-dots {
+            position: absolute;
+            top: 35%;
+            right: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 60px;
+            opacity: 0.1;
+        }
+        
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 3px;
+        }
+        
+        .pattern-line {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            width: 80px;
+            height: 1px;
+            background-color: white;
+            opacity: 0.1;
+            transform: translateX(-50%);
+        }
+        
+        .right-column-bg {
+            background: linear-gradient(135deg, #F8F4EC 0%, #F5F5F5 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .nav-link.active {
+            background-color: rgba(99, 102, 241, 0.15);
+            color: #4F46E5;
+            font-weight: 500;
+        }
+        
+        .nav-link.active svg {
+            color: #4F46E5;
+        }
+        
+        .page-transition {
+            transition: all 0.3s ease;
+        }
+        
+        .page-section {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .title-gradient {
+            background: linear-gradient(to right, #6366F1, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover .icon-container {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: white;
+            margin: 0 8px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .shopee {
+            background: linear-gradient(135deg, #EE4D2D, #FF7337);
+        }
+        
+        .tokopedia {
+            background: linear-gradient(135deg, #42B549, #4AD958);
+        }
+        
+        .youtube {
+            background: linear-gradient(135deg, #FF0000, #FF5E5E);
+        }
+        
+        .tiktok {
+            background: linear-gradient(135deg, #000000, #25F4EE);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #4AE278);
+        }
+        
+        .logo-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Bottle logo styles */
+        .bottle-logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bottle {
+            position: relative;
+            width: 36px;
+            height: 60px;
+        }
+        
+        .bottle-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 45px;
+            background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            border-radius: 5px 5px 15px 15px;
+        }
+        
+        .bottle-neck {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 10px;
+            background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .bottle-cap {
+            position: absolute;
+            bottom: 55px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 6px;
+            background: #fff;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .bottle-shine {
+            position: absolute;
+            top: 10px;
+            left: 6px;
+            width: 8px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: rotate(30deg);
+        }
+        
+        .bottle-label {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bottle-text {
+            font-size: 10px;
+            font-weight: bold;
+            color: #6366F1;
+        }
+        
+        /* Product card styles */
+        .product-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Video thumbnail styles */
+        .video-thumbnail {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        /* Testimonial styles */
+        .testimonial-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Badge styles */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Content scroll area */
+        .content-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .content-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .content-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .content-scroll::-webkit-scrollbar-thumb {
+            background: #c5c5c5;
+            border-radius: 10px;
+        }
+        
+        .content-scroll::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="card max-w-4xl w-full">
+        <div class="flex flex-col md:flex-row">
+            <!-- Left Column - Logo and Social Media Icons -->
+            <div class="left-column-bg p-8 flex flex-col items-center justify-between md:w-1/3 relative">
+                <!-- Decorative patterns - positioned to not overlap with icons -->
+                <div class="pattern-top-right"></div>
+                <div class="pattern-top-left"></div>
+                <div class="pattern-middle"></div>
+                <div class="pattern-line"></div>
+                <div class="pattern-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                
+                <!-- Logo with Bottle Icon -->
+                <div class="flex flex-col items-center mb-8 mt-4 z-10">
+                    <div class="logo-container mb-4">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <div class="bottle-logo">
+                                <div class="bottle">
+                                    <div class="bottle-cap"></div>
+                                    <div class="bottle-neck"></div>
+                                    <div class="bottle-body">
+                                        <div class="bottle-shine"></div>
+                                        <div class="bottle-label">
+                                            <span class="bottle-text">TCA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold text-white tracking-tight text-center">
+                        tca<span class="text-white opacity-80">80</span>.com
+                    </h1>
+                </div>
+                
+                <!-- Social Media Icons - these will be above any patterns -->
+                <div class="flex flex-wrap justify-center gap-4 mb-4 z-10">
+                    <!-- Shopee -->
+                    <a href="https://shopee.co.id" target="_blank" class="social-icon shopee" title="Shopee">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <!-- Tokopedia -->
+                    <a href="https://tokopedia.com" target="_blank" class="social-icon tokopedia" title="Tokopedia">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v8"></path>
+                            <path d="M8 12h8"></path>
+                        </svg>
+                    </a>
+                    
+                    <!-- YouTube -->
+                    <a href="https://youtube.com" target="_blank" class="social-icon youtube" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com" target="_blank" class="social-icon tiktok" title="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+                            <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                            <path d="M15 8v8a4 4 0 0 1-4 4"></path>
+                            <line x1="9" y1="16" x2="9" y2="20"></line>
+                        </svg>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column - Navigation with elegant gradient background -->
+            <div class="right-column-bg p-8 md:w-2/3">
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold mb-2 title-gradient">Social Media Pages</h2>
+                    <p class="text-gray-600 text-sm">Connect with us on our social platforms</p>
+                </div>
+                
+                <nav class="space-y-1">
+                    <a href="#page1" class="nav-link active flex items-center text-gray-700 hover:text-indigo-600" onclick="setActivePage(this, 'page1')">
+                        <div class="icon-container bg-indigo-100">
+                            <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                            </svg>
+                        </div>
+                        Shopee Store
+                    </a>
+                    <a href="#page2" class="nav-link flex items-center text-gray-700 hover:text-purple-600" onclick="setActivePage(this, 'page2')">
+                        <div class="icon-container bg-purple-100">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Tokopedia
+                    </a>
+                    <a href="#page3" class="nav-link flex items-center text-gray-700 hover:text-blue-600" onclick="setActivePage(this, 'page3')">
+                        <div class="icon-container bg-blue-100">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        YouTube
+                    </a>
+                    <a href="#page4" class="nav-link flex items-center text-gray-700 hover:text-pink-600" onclick="setActivePage(this, 'page4')">
+                        <div class="icon-container bg-pink-100">
+                            <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a6 6 0 0012 0c0-.352-.035-.696-.1-1.028A5.001 5.001 0 0010 11z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        TikTok
+                    </a>
+                    <a href="#page5" class="nav-link flex items-center text-gray-700 hover:text-green-600" onclick="setActivePage(this, 'page5')">
+                        <div class="icon-container bg-green-100">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        WhatsApp
+                    </a>
+                </nav>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div id="page-content" class="text-gray-700 content-scroll">
+                        <!-- Page 1: Shopee Store -->
+                        <div id="page1" class="page-section">
+                            <div class="flex items-center mb-4">
+                                <div class="w-2 h-8 bg-indigo-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Shopee Store</h3>
+                            </div>
+                            
+                            <div class="bg-orange-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center mb-2">
+                                    <svg class="w-5 h-5 text-orange-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="font-medium text-orange-800">Flash Sale Today!</span>
+                                </div>
+                                <p class="text-sm text-orange-700">Get 25% off on all TCA products until midnight. Use code: <span class="font-semibold">TCA25OFF</span></p>
+                            </div>
+                            
+                            <h4 class="font-medium text-gray-700 mb-3">Featured Products</h4>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <!-- Product 1 -->
+                                <div class="product-card bg-white border border-gray-100">
+                                    <div class="h-32 bg-indigo-100 flex items-center justify-center">
+                                        <div class="w-16 h-24">
+                                            <div class="bottle">
+                                                <div class="bottle-cap"></div>
+                                                <div class="bottle-neck"></div>
+                                                <div class="bottle-body" style="background: linear-gradient(135deg, #3B82F6 0%, #93C5FD 100%);">
+                                                    <div class="bottle-shine"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-medium text-sm">TCA Cleanser</h5>
+                                            <span class="badge bg-red-100 text-red-600">-15%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <span class="text-xs text-gray-500 line-through">Rp 150.000</span>
+                                                <p class="font-semibold text-indigo-600">Rp 127.500</p>
+                                            </div>
+                                            <div class="text-xs text-gray-500">⭐ 4.9 (120)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product 2 -->
+                                <div class="product-card bg-white border border-gray-100">
+                                    <div class="h-32 bg-pink-50 flex items-center justify-center">
+                                        <div class="w-16 h-24">
+                                            <div class="bottle">
+                                                <div class="bottle-cap"></div>
+                                                <div class="bottle-neck"></div>
+                                                <div class="bottle-body" style="background: linear-gradient(135deg, #EC4899 0%, #F9A8D4 100%);">
+                                                    <div class="bottle-shine"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-medium text-sm">TCA Toner</h5>
+                                            <span class="badge bg-green-100 text-green-600">New</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-semibold text-indigo-600">Rp 135.000</p>
+                                            </div>
+                                            <div class="text-xs text-gray-500">⭐ 4.8 (86)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <!-- Product 3 -->
+                                <div class="product-card bg-white border border-gray-100">
+                                    <div class="h-32 bg-green-50 flex items-center justify-center">
+                                        <div class="w-16 h-24">
+                                            <div class="bottle">
+                                                <div class="bottle-cap"></div>
+                                                <div class="bottle-neck"></div>
+                                                <div class="bottle-body" style="background: linear-gradient(135deg, #10B981 0%, #A7F3D0 100%);">
+                                                    <div class="bottle-shine"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-medium text-sm">TCA Serum</h5>
+                                            <span class="badge bg-yellow-100 text-yellow-600">Best</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="font-semibold text-indigo-600">Rp 185.000</p>
+                                            </div>
+                                            <div class="text-xs text-gray-500">⭐ 5.0 (210)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Product 4 -->
+                                <div class="product-card bg-white border border-gray-100">
+                                    <div class="h-32 bg-purple-50 flex items-center justify-center">
+                                        <div class="w-16 h-24">
+                                            <div class="bottle">
+                                                <div class="bottle-cap"></div>
+                                                <div class="bottle-neck"></div>
+                                                <div class="bottle-body" style="background: linear-gradient(135deg, #8B5CF6 0%, #DDD6FE 100%);">
+                                                    <div class="bottle-shine"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <h5 class="font-medium text-sm">TCA Moisturizer</h5>
+                                            <span class="badge bg-red-100 text-red-600">-20%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <span class="text-xs text-gray-500 line-through">Rp 175.000</span>
+                                                <p class="font-semibold text-indigo-600">Rp 140.000</p>
+                                            </div>
+                                            <div class="text-xs text-gray-500">⭐ 4.7 (95)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-indigo-50 rounded-lg p-4 mb-6">
+                                <h4 class="font-medium text-indigo-800 mb-2">Customer Reviews</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-600 font-medium mr-3">S</div>
+                                        <div>
+                                            <div class="flex items-center">
+                                                <h5 class="font-medium text-sm">Sarah K.</h5>
+                                                <div class="text-yellow-400 text-xs ml-2">★★★★★</div>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">The TCA Serum is amazing! My skin feels so much smoother after just one week of use.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-pink-200 flex items-center justify-center text-pink-600 font-medium mr-3">R</div>
+                                        <div>
+                                            <div class="flex items-center">
+                                                <h5 class="font-medium text-sm">Rini A.</h5>
+                                                <div class="text-yellow-400 text-xs ml-2">★★★★★</div>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">Fast shipping and the products are always authentic. Love shopping TCA products here!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="https://shopee.co.id" target="_blank" class="inline-block px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                    Visit Our Shopee Store
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Page 2: Tokopedia -->
+                        <div id="page2" class="page-section hidden">
+                            <div class="flex items-center mb-4">
+                                <div class="w-2 h-8 bg-green-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Tokopedia Official Store</h3>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center mb-2">
+                                    <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="font-medium text-green-800">Official Store Badge</span>
+                                </div>
+                                <p class="text-sm text-green-700">TCA80 is a verified official store on Tokopedia. Shop with confidence!</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-700 mb-3">Best Selling Bundles</h4>
+                                
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden mb-4">
+                                    <div class="flex flex-col sm:flex-row">
+                                        <div class="w-full sm:w-1/3 bg-gradient-to-br from-green-50 to-green-100 p-4 flex items-center justify-center">
+                                            <div class="flex space-x-1">
+                                                <div class="w-12 h-20">
+                                                    <div class="bottle">
+                                                        <div class="bottle-cap"></div>
+                                                        <div class="bottle-neck"></div>
+                                                        <div class="bottle-body" style="background: linear-gradient(135deg, #10B981 0%, #A7F3D0 100%);">
+                                                            <div class="bottle-shine"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-12 h-20">
+                                                    <div class="bottle">
+                                                        <div class="bottle-cap"></div>
+                                                        <div class="bottle-neck"></div>
+                                                        <div class="bottle-body" style="background: linear-gradient(135deg, #8B5CF6 0%, #DDD6FE 100%);">
+                                                            <div class="bottle-shine"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-2/3 p-4">
+                                            <div class="flex justify-between items-start">
+                                                <h5 class="font-medium">Morning Routine Bundle</h5>
+                                                <span class="badge bg-green-100 text-green-600">Save 15%</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1 mb-2">TCA Serum + TCA Moisturizer</p>
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <span class="text-xs text-gray-500 line-through">Rp 360.000</span>
+                                                    <p class="font-semibold text-green-600">Rp 306.000</p>
+                                                </div>
+                                                <div class="text-xs text-gray-500">⭐ 4.9 (78 reviews)</div>
+                                            </div>
+                                            <button class="mt-3 px-4 py-1.5 bg-green-500 text-white text-sm rounded-lg hover:bg-green-600 transition-colors">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="flex flex-col sm:flex-row">
+                                        <div class="w-full sm:w-1/3 bg-gradient-to-br from-green-50 to-green-100 p-4 flex items-center justify-center">
+                                            <div class="flex space-x-1">
+                                                <div class="w-12 h-20">
+                                                    <div class="bottle">
+                                                        <div class="bottle-cap"></div>
+                                                        <div class="bottle-neck"></div>
+                                                        <div class="bottle-body" style="background: linear-gradient(135deg, #3B82F6 0%, #93C5FD 100%);">
+                                                            <div class="bottle-shine"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-12 h-20">
+                                                    <div class="bottle">
+                                                        <div class="bottle-cap"></div>
+                                                        <div class="bottle-neck"></div>
+                                                        <div class="bottle-body" style="background: linear-gradient(135deg, #EC4899 0%, #F9A8D4 100%);">
+                                                            <div class="bottle-shine"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-2/3 p-4">
+                                            <div class="flex justify-between items-start">
+                                                <h5 class="font-medium">Evening Routine Bundle</h5>
+                                                <span class="badge bg-green-100 text-green-600">Save 20%</span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1 mb-2">TCA Cleanser + TCA Toner</p>
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <span class="text-xs text-gray-500 line-through">Rp 285.000</span>
+                                                    <p class="font-semibold text-green-600">Rp 228.000</p>
+                                                </div>
+                                                <div class="text-xs text-gray-500">⭐ 4.8 (92 reviews)</div>
+                                            </div>
+                                            <button class="mt-3 px-4 py-1.5 bg-green-500 text-white text-sm rounded-lg hover:bg-green-600 transition-colors">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+                                <h4 class="font-medium text-gray-700 mb-3">Store Information</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="text-sm">Operating Hours: 08:00 - 20:00 WIB</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="text-sm">Jakarta, Indonesia</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                        </svg>
+                                        <span class="text-sm">Response Rate: 98% (within 1 hour)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="https://tokopedia.com" target="_blank" class="inline-block px-6 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                    Visit Our Tokopedia Store
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Page 3: YouTube -->
+                        <div id="page3" class="page-section hidden">
+                            <div class="flex items-center mb-4">
+                                <div class="w-2 h-8 bg-red-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">YouTube Channel</h3>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center mb-2">
+                                    <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="font-medium text-red-800">12.5K Subscribers</span>
+                                </div>
+                                <p class="text-sm text-red-700">Subscribe to our channel for skincare tips, product reviews, and tutorials!</p>
+                            </div>
+                            
+                            <h4 class="font-medium text-gray-700 mb-3">Latest Videos</h4>
+                            
+                            <div class="space-y-4 mb-6">
+                                <!-- Video 1 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="flex flex-col sm:flex-row">
+                                        <div class="w-full sm:w-2/5 relative">
+                                            <div class="video-thumbnail bg-gray-100 h-48 sm:h-full">
+                                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-red-400/20 to-red-600/20">
+                                                    <div class="text-center">
+                                                        <div class="play-button">
+                                                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-3/5 p-4">
+                                            <h5 class="font-medium mb-1">Morning Skincare Routine with TCA Products</h5>
+                                            <p class="text-sm text-gray-600 mb-2">Learn how to use TCA products for the perfect morning skincare routine that will leave your skin glowing all day.</p>
+                                            <div class="flex items-center text-xs text-gray-500 mb-3">
+                                                <span>15:24</span>
+                                                <span class="mx-2">•</span>
+                                                <span>2.3K views</span>
+                                                <span class="mx-2">•</span>
+                                                <span>3 days ago</span>
+                                            </div>
+                                            <a href="#" class="text-red-600 text-sm font-medium hover:text-red-700">Watch Video →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Video 2 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="flex flex-col sm:flex-row">
+                                        <div class="w-full sm:w-2/5 relative">
+                                            <div class="video-thumbnail bg-gray-100 h-48 sm:h-full">
+                                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-red-400/20 to-red-600/20">
+                                                    <div class="text-center">
+                                                        <div class="play-button">
+                                                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-3/5 p-4">
+                                            <h5 class="font-medium mb-1">TCA Serum Review: Before & After Results</h5>
+                                            <p class="text-sm text-gray-600 mb-2">See the amazing transformation after 4 weeks of using our bestselling TCA Serum. Real results from real customers!</p>
+                                            <div class="flex items-center text-xs text-gray-500 mb-3">
+                                                <span>12:08</span>
+                                                <span class="mx-2">•</span>
+                                                <span>5.7K views</span>
+                                                <span class="mx-2">•</span>
+                                                <span>1 week ago</span>
+                                            </div>
+                                            <a href="#" class="text-red-600 text-sm font-medium hover:text-red-700">Watch Video →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Video 3 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="flex flex-col sm:flex-row">
+                                        <div class="w-full sm:w-2/5 relative">
+                                            <div class="video-thumbnail bg-gray-100 h-48 sm:h-full">
+                                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-red-400/20 to-red-600/20">
+                                                    <div class="text-center">
+                                                        <div class="play-button">
+                                                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full sm:w-3/5 p-4">
+                                            <h5 class="font-medium mb-1">How to Choose the Right TCA Product for Your Skin Type</h5>
+                                            <p class="text-sm text-gray-600 mb-2">Our skincare expert explains how to select the perfect TCA products based on your unique skin concerns.</p>
+                                            <div class="flex items-center text-xs text-gray-500 mb-3">
+                                                <span>18:45</span>
+                                                <span class="mx-2">•</span>
+                                                <span>8.1K views</span>
+                                                <span class="mx-2">•</span>
+                                                <span>2 weeks ago</span>
+                                            </div>
+                                            <a href="#" class="text-red-600 text-sm font-medium hover:text-red-700">Watch Video →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg border border-gray-200 p-4 mb-6">
+                                <h4 class="font-medium text-gray-700 mb-3">Upcoming Live Streams</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <div>
+                                            <h5 class="font-medium text-sm">Q&A Session with Our Dermatologist</h5>
+                                            <p class="text-xs text-gray-500">Friday, 7:00 PM WIB</p>
+                                        </div>
+                                        <button class="ml-auto text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full">Set Reminder</button>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <div>
+                                            <h5 class="font-medium text-sm">New Product Launch: TCA Night Cream</h5>
+                                            <p class="text-xs text-gray-500">Sunday, 3:00 PM WIB</p>
+                                        </div>
+                                        <button class="ml-auto text-xs bg-red-100 text-red-600 px-3 py-1 rounded-full">Set Reminder</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="https://youtube.com" target="_blank" class="inline-block px-6 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                    Subscribe to Our Channel
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Page 4: TikTok -->
+                        <div id="page4" class="page-section hidden">
+                            <div class="flex items-center mb-4">
+                                <div class="w-2 h-8 bg-black rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">TikTok Account</h3>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
+                                <div class="flex items-center mb-2">
+                                    <svg class="w-5 h-5 text-black mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                    </svg>
+                                    <span class="font-medium text-gray-800">45.2K Followers</span>
+                                </div>
+                                <p class="text-sm text-gray-700">Follow us for quick skincare tips, product demos, and fun challenges!</p>
+                            </div>
+                            
+                            <h4 class="font-medium text-gray-700 mb-3">Trending TikToks</h4>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <!-- TikTok 1 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[177.77%]">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-black/10 to-black/30 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="play-button">
+                                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-sm font-medium truncate">#SkincareTips</p>
+                                        <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
+                                            <span>245.6K views</span>
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                                                </svg>
+                                                18.2K
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- TikTok 2 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[177.77%]">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-black/10 to-black/30 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="play-button">
+                                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-sm font-medium truncate">#TCAChallenge</p>
+                                        <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
+                                            <span>189.3K views</span>
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                                                </svg>
+                                                15.7K
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- TikTok 3 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[177.77%]">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-black/10 to-black/30 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="play-button">
+                                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-sm font-medium truncate">#BeforeAfter</p>
+                                        <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
+                                            <span>321.8K views</span>
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                                                </svg>
+                                                27.5K
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- TikTok 4 -->
+                                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                                    <div class="relative pb-[177.77%]">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-black/10 to-black/30 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <div class="play-button">
+                                                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+                                        <p class="text-sm font-medium truncate">#QuickRoutine</p>
+                                        <div class="flex items-center justify-between mt-1 text-xs text-gray-500">
+                                            <span>156.2K views</span>
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                                                </svg>
+                                                12.9K
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg p-4 mb-6 text-white">
+                                <h4 class="font-medium mb-2">Join Our TikTok Challenge!</h4>
+                                <p class="text-sm mb-3">Show us your skincare routine using TCA products and tag #TCAGlow for a chance to win a complete skincare set!</p>
+                                <div class="flex items-center text-xs">
+                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span>Challenge ends in 5 days</span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <a href="https://tiktok.com" target="_blank" class="inline-block px-6 py-2 bg-gradient-to-r from-black to-gray-800 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                    Follow Us on TikTok
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Page 5: WhatsApp -->
+                        <div id="page5" class="page-section hidden">
+                            <div class="flex items-center mb-4">
+                                <div class="w-2 h-8 bg-green-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">WhatsApp Support</h3>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4 mb-6">
+                                <div class="flex items-center mb-2">
+                                    <svg class="w-5 h-5 text-green-600 mr-2" fill="currentColor" viewBox<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'941c932c6618e416',t:'MTc0NzU4NDEwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>

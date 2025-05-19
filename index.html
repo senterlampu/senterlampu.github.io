@@ -2807,6 +2807,66 @@
                                     </button>
                                 </div>
                             </div>
+<div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+    <div class="flex items-center mb-5">
+        <div class="icon-container bg-pink-100 mr-3">
+            <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <h4 class="text-lg font-semibold text-gray-800">Gallery Hasil Perawatan</h4>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white text-sm">Before & After Milia</div>
+        </div>
+
+        <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white text-sm">Hasil Syringoma</div>
+        </div>
+
+        <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="https://images.unsplash.com/photo-1599351431200-00e036d5f7e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599351431200-00e036d5f7e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white text-sm">Perbaikan Acne Scar</div>
+        </div>
+
+        <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="https://images.unsplash.com/photo-1599351431200-00e036d5f7e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1599351431200-00e036d5f7e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3 text-white text-sm">Xanthelasma Treatment</div>
+        </div>
+    </div>
+
+    <div id="popup-overlay" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="relative">
+            <img id="popup-image" class="max-w-full max-h-full" src="" alt="Popup Image">
+            <button id="popup-close" class="absolute top-2 right-2 text-white text-3xl font-bold cursor-pointer">×</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.photo-popup').forEach(item => {
+        item.addEventListener('click', function(event) {
+            const imageUrl = this.getAttribute('data-src');
+            document.getElementById('popup-image').src = imageUrl;
+            document.getElementById('popup-overlay').classList.remove('hidden');
+            document.getElementById('popup-overlay').style.top = `${window.scrollY + window.innerHeight / 2}px`;
+        });
+    });
+
+    document.getElementById('popup-overlay').addEventListener('click', function() {
+        this.classList.add('hidden');
+    });
+
+    document.getElementById('popup-close').addEventListener('click', function() {
+        document.getElementById('popup-overlay').classList.add('hidden');
+    });
+</script>
+
+                            
                         </div>                                                
                     </div>
                 </div>

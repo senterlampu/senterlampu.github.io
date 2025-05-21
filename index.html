@@ -2481,20 +2481,20 @@
                                         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/img/testi7.jpeg');"></div>
                                     </div>
 
-                                    <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="/img/testi8.jpeg">
-                                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/img/testi8.jpeg');"></div>
+                                    <div class="relative pb-[100%] bg-gray-100 rounded-lg overflow-hidden group photo-popup" data-src="img/testi8.jpeg">
+                                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/testi8.jpeg');"></div>
                                     </div>        
                                 </div>
 
+
+<div id="popup-overlay" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-[60]">
+    <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+        <img id="popup-image" class="max-w-full max-h-full rounded-lg object-contain" src="" alt="Popup Image">
+        <button id="popup-close" class="absolute top-2 right-0 text-white text-3xl font-bold cursor-pointer hover:text-gray-300 focus:outline-none">×</button>
+    </div>
+</div>
                                 <!-- Improved popup with better centering -->
-                                <div id="popup-overlay" class="fixed inset-0 bg-black bg-opacity-70 hidden z-[60]">
-                                <div class="flex items-center justify-center min-h-screen p-4">
-                                    <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center mx-auto">
-                                    <img id="popup-image" class="max-w-full max-h-full rounded-lg object-contain" src="" alt="Popup Image">
-                                    <button id="popup-close" class="absolute -top-10 right-0 text-white text-3xl font-bold cursor-pointer hover:text-gray-300 focus:outline-none">×</button>
-                                    </div>
-                                </div>
-                                </div>
+
 
                             </div>
 
@@ -2514,13 +2514,17 @@
 
                                         const tempImg = new Image();
                                         tempImg.src = imageUrl;
-                                        tempImg.onload = function () {
-                                            popupImage.src = imageUrl;
-                                            overlay.classList.remove('hidden');
-                                            setTimeout(() => {
-                                                closeBtn.focus(); // Optional: biar tombol close langsung aktif
-                                            }, 100);
-                                        };
+tempImg.onload = function () {
+    popupImage.src = imageUrl;
+    document.getElementById('popup-overlay').classList.remove('hidden');
+    
+    // Unlock scroll dan pastikan posisi modal tetap di tengah
+    document.body.style.overflow = "hidden";
+
+    // Tambahan ini biar viewport stay di posisi sekarang
+    window.scrollTo({ top: window.scrollY });
+};
+
                                     });
                                 });
 
